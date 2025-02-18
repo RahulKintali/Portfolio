@@ -14,19 +14,29 @@ const Sidebar = () => {
 
       {/* Navigation Links */}
       <nav className="mt-6">
-        <ul className="space-y-4 text-center">
-          {["Home", "About", "Interests", "Skills", "Education", "Experience", "Certifications", "Projects"].map((item) => (
-            <li key={item}>
-              <Link
-                to={`/${item.toLowerCase()}`}
-                className="hover:text-blue-500 text-lg block"
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+  <ul className="space-y-4 text-center">
+    {[
+      { name: "Home", path: "/home" },
+      { name: "About", path: "/about" },
+      { name: "Interests", path: "/interests" },
+      { name: "Skills", path: "/skills" },
+      { name: "Education", path: "/education" },
+      { name: "Experience", path: "/experience" },
+      { name: "Certifications", path: "/certifications" },
+      { name: "Projects", path: "/projects" },
+    ].map((item) => (
+      <li key={item.name}>
+        <Link
+          to={item.path}
+          className="hover:text-blue-500 text-lg block"
+        >
+          {item.name}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</nav>
+
 
       {/* Social Media Icons */}
       <div className="flex justify-center gap-4 mt-6">
