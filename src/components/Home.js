@@ -12,7 +12,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Hi! I'm <span className="text-blue-500">Your Name</span>
+          Hi! I'm <span className="text-blue-500">Rahul Kintali</span>
         </motion.h1>
         <motion.p
           className="text-gray-600 text-lg mt-4"
@@ -20,7 +20,7 @@ const Home = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          I'm a passionate Software Developer.
+          A Data Analyst with expertise in SQL, Python, Power BI, and Data Visualization.
         </motion.p>
       </div>
     </div>
