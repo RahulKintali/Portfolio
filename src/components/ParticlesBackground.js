@@ -25,17 +25,17 @@ const ParticlesBackground = () => {
           },
           modes: {
             repulse: {
-              distance: 150,
+              distance: 100,
               duration: 0.4,
             },
           },
         },
         particles: {
           number: {
-            value: 60,
+            value: 40,  // Reduced particle count
             density: {
               enable: true,
-              area: 800,
+              area: 600,  // Smaller area
             },
           },
           color: {
@@ -45,16 +45,16 @@ const ParticlesBackground = () => {
             type: "circle",
           },
           opacity: {
-            value: 0.5,
+            value: 0.3,  // Slightly more visible
             random: true,
           },
           size: {
-            value: 4,
+            value: 3,  // Smaller size for subtle effect
             random: true,
           },
           move: {
             enable: true,
-            speed: 1.5,
+            speed: 1,
             direction: "none",
             random: false,
             straight: false,
@@ -62,14 +62,14 @@ const ParticlesBackground = () => {
           },
           links: {
             enable: true,
-            distance: 150,
+            distance: 100,  // Reduce linking distance
             color: "#000000",
-            opacity: 0.4,
-            width: 1,
+            opacity: 0.2,  // Reduce link visibility
+            width: 0.8,  // Thinner lines
           },
         },
       }}
-      className="absolute w-full h-full -z-10"
+      className="absolute w-full h-full -z-10 opacity-70"
     />
   );
 };
