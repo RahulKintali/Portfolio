@@ -3,9 +3,11 @@ import ParticlesBackground from "./ParticlesBackground";
 
 const Home = () => {
   return (
-    <div className="relative flex items-center justify-center h-screen bg-white overflow-hidden">
-      {/* Particle Animation */}
-      <ParticlesBackground />
+    <div className="relative flex items-center justify-center h-screen bg-white">
+      {/* Particle Animation - Full Background */}
+      <div className="absolute inset-0 -z-10">
+        <ParticlesBackground />
+      </div>
 
       <div className="text-center z-10 relative">
         <motion.h1
