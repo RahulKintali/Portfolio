@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import Education from "./components/Education";
@@ -12,7 +12,9 @@ function App() {
         <Sidebar />
         <div className="ml-0 md:ml-64 w-full p-6">
           <Routes>
-            <Route path="/" element={<Home />} />
+            {/* Redirect the base URL to Home */}
+            <Route path="/" element={<Navigate replace to="/home" />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/education" element={<Education />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/experience" element={<Experience />} />
