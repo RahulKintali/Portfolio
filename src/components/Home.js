@@ -1,31 +1,38 @@
-import { motion } from "framer-motion";
-import ParticlesBackground from "./ParticlesBackground";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
 const Home = () => {
-  return (
-    <div className="relative flex items-center justify-center h-screen bg-white">
-      {/* Particle Animation - Full Background */}
-      <div className="absolute inset-0 -z-10">
-        <ParticlesBackground />
-      </div>
+  const particlesInit = async (main) => {
+    await loadFull(main);
+  };
 
-      <div className="text-center z-10 relative">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
+  return (
+    <div className="relative w-full h-screen flex flex-col items-center justify-center bg-white">
+      {/* Particle Background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          fullScreen: { enable: false },
+          background: { color: "transparent" },
+          particles: {
+            number: { value: 50 },
+            size: { value: 3 },
+            move: { speed: 2 },
+            links: { enable: true, color: "#a8a8a8" },
+          },
+        }}
+        className="absolute top-0 left-0 w-full h-full -z-10"
+      />
+
+      {/* Text Content */}
+      <div className="z-10 text-center">
+        <h1 className="text-4xl font-bold">
           Hi! I'm <span className="text-blue-500">Rahul Kintali</span>
-        </motion.h1>
-        <motion.p
-          className="text-gray-600 text-lg mt-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
+        </h1>
+        <p className="mt-3 text-lg text-gray-600">
           A Data Analyst with expertise in SQL, Python, Power BI, and Data Visualization.
-        </motion.p>
+        </p>
       </div>
     </div>
   );
