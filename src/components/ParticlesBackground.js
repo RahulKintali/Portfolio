@@ -32,7 +32,7 @@ const ParticlesBackground = () => {
         },
         particles: {
           number: {
-            value: 50,
+            value: 60,
             density: {
               enable: true,
               area: 800,
@@ -54,7 +54,7 @@ const ParticlesBackground = () => {
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: 1.5,
             direction: "none",
             random: false,
             straight: false,
