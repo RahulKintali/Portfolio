@@ -12,6 +12,7 @@ const ParticlesBackground = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
+        fullScreen: { enable: true, zIndex: -1 }, // Ensures particles cover entire screen
         background: {
           color: "#ffffff",
         },
@@ -25,31 +26,31 @@ const ParticlesBackground = () => {
           },
           modes: {
             repulse: {
-              distance: 100,
+              distance: 120,
               duration: 0.4,
             },
           },
         },
         particles: {
           number: {
-            value: 40,  // Reduced particle count
+            value: 80, // Increased number of particles
             density: {
               enable: true,
-              area: 600,  // Smaller area
+              area: 800, // Keep area large for full coverage
             },
           },
           color: {
-            value: "#000000",
+            value: "#3498db", // Light blue for a subtle effect
           },
           shape: {
             type: "circle",
           },
           opacity: {
-            value: 0.3,  // Slightly more visible
+            value: 0.5, // Slightly more visible
             random: true,
           },
           size: {
-            value: 3,  // Smaller size for subtle effect
+            value: 4, // Keep medium size
             random: true,
           },
           move: {
@@ -62,14 +63,13 @@ const ParticlesBackground = () => {
           },
           links: {
             enable: true,
-            distance: 100,  // Reduce linking distance
-            color: "#000000",
-            opacity: 0.2,  // Reduce link visibility
-            width: 0.8,  // Thinner lines
+            distance: 150,
+            color: "#3498db",
+            opacity: 0.4, // Make connections slightly visible
+            width: 1,
           },
         },
       }}
-      className="absolute w-full h-full -z-10 opacity-70"
     />
   );
 };
