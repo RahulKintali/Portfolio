@@ -4,8 +4,10 @@ import ParticlesBackground from "./ParticlesBackground";
 const Home = () => {
   return (
     <div className="relative flex items-center justify-center h-screen bg-white">
+      {/* Particle Animation */}
       <ParticlesBackground />
-      <div className="text-center">
+
+      <div className="text-center z-10">
         <motion.h1
           className="text-4xl md:text-6xl font-bold"
           initial={{ opacity: 0, y: -50 }}
